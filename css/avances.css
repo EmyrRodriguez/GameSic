@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'poppins', sans-serif;
+
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    min-height: 100vh;
+}
+
+/*Universales*/
+
+
+
+
+/*Logo*/
+.logo-game{
+    padding: 0;
+    margin: 0;
+    width: 90px;
+    height: 90px;
+}
+
+/*HEADER */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 0 100px;
+    z-index: 100000;
+}
+header.sticky{
+    padding: 5px 100px;
+    background: #bdb6b6;
+}
+header ul{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header ul li{
+    position: relative;
+    list-style: none;
+}
+header ul li a{
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ffffff;
+    letter-spacing: 2px;
+    font-weight: 500px;
+    transition: 0.6s;
+}
+header.sticky ul li a{
+    color: #000000;
+}
+
+
+/*Scroll de color*/
+section{
+    padding: 50px;
+    background: #000;
+}
+section h2{
+    font-size: 2.5em;
+    color: #ffffff;
+}
+section p{
+    font-size: 1.2em;
+    color: #ffffff;
+}
+::-webkit-scrollbar{
+    width: 0;
+}
+#scrollPath{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    background: rgba(225, 225, 225, 0.05);
+}
+#progressbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 100%;
+    background: linear-gradient(to top,#008aff,#00ffe7);
+    animation: animate 5s linear infinite;
+}
+@keyframes animate{
+    0%,100%{
+        filter:hue-rotate(0deg);
+    }
+    50%{
+        filter:hue-rotate(360deg);
+    }
+}
+#progressbar:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top,#008aff,#00ffe7);
+    filter: blur(10px);
+}
+#progressbar:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top,#008aff,#00ffe7);
+    filter: blur(10px);
+}
+
+
+/*Titulos*/
+.noticias{
+    position: relative;
+    font-size: 3.4em;
+    font-weight: 900;
+    color: #ffffff;
+    z-index: 1;
+    overflow: hidden;
+}
+h2:before{
+    content: '';
+    position: absolute;
+    left: -20%;
+    width: 120%;
+    height: 100%;
+}
+
+h2 span{
+    color: #ff022c;
+}
+
+
+
+
+
+
+
+
+/*VIDEOS*/
+
+.contenedor1{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1000px;
+}
+.contenedor1 .box{
+position: relative;
+width: 450px;
+height: 320px;
+background: #000;
+}
+.contenedor1 .box .videobx{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+.contenedor1 .box .videobx video
+{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+.contenedor1 .box .contentbx
+{
+position: absolute;
+top: 40px;
+bottom: 40px;
+right: 40px;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+background: rgba(0, 0, 0, 0.95);
+display: flex;
+justify-content: center;
+align-items: center;
+transition: transform 0.5s;
+transform-origin: right;
+transform: scaleX(0);
+
+}
+.contenedor1 .box:hover .contentbx{
+    transition: transform 0.5s;
+    transform-origin: left;
+    transform: scaleX(1);
+}
+.contenedor1 .box .contentbx .content
+{
+position: relative;
+padding: 20px 60px;
+opacity: 0;
+}
+.contenedor1 .box:hover .contentbx .content{
+opacity: 1;
+transition: 0.5s;
+transition-delay: 0.5s;
+}
+.contenedor1 .box .contentbx .content h2
+{
+    color: #ffffff;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.contenedor1 .box .contentbx .content p{
+    color: #ffffff;
+    font-weight: 300;
+}
+@media(max-width:992px){
+    header{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    header a{
+        width: 400px;
+    }
+}
+@media(max-width:992px){
+    .noticias{
+        position: relative;
+        top:100px;
+        left: 70px;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .noticias h2{
+        width: 400px;
+    }
+}
+@media(max-width:992px){
+
+    .contenedor1{
+        position: relative;
+        left: 70px;
+        top: 120px;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media(max-width: 320px){
+    header{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    header a{
+        width: 400px;
+    }
+    #progressbar{
+        background: transparent;
+        overflow-x:hidden; 
+        overflow-y:hidden
+    }
+    #scrollPath{   
+        overflow-x:hidden; 
+        overflow-y:hidden;
+    }
+}
+@media(max-width:320px){
+    .noticias{
+        position: relative;
+        top:100px;
+        left: 70px;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .noticias h2{
+        width: 400px;
+    }
+}
+@media(max-width:320px){
+
+    .contenedor1{
+        position: relative;
+        left: 70px;
+        top: 120px;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+}
